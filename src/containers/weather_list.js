@@ -10,12 +10,15 @@ import 'rxjs/add/operator/delay';
 
 class WeatherList extends Component {
 
-    static renderWeather(cityData)  {
-            console.log(cityData);
-            return <tr key={cityData.city.id}>
-                <td>{cityData.city.name}</td>
-            </tr>
 
+    renderWeather()  {
+        return this.props.weather.map(
+            (cityData) => (
+                <tr key={cityData.city.id}>
+                    <td>{cityData.city.name}</td>
+                </tr>
+            )
+        )
     };
 
     render () {
@@ -30,11 +33,7 @@ class WeatherList extends Component {
                     </tr>
                     </thead>
                     <tbody className="tbodyBind">
-                    {
-                        this.props.weather.map(
-                        (cityData) => WeatherList.renderWeather(cityData)
-                     )
-                    }
+                    { this.renderWeather() }
                     </tbody>
                 </table>
             )
