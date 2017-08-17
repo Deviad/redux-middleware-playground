@@ -13,7 +13,9 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/catch';
-import {fetchWeatherFulfilled} from "../actions/index";
+
+import {fetchWeatherFulfilled} from "../actions";
+
 const API_KEY = 'cd4c039fb3dca06186399ff210331f9b';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 export  const fetchWeatherEpic = (action$) => {
