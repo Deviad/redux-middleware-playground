@@ -9,28 +9,15 @@ import 'rxjs/add/operator/delay';
 
 class WeatherList extends Component {
 
-    componentDidMount() {
-        document.querySelector('.tbodyBind').innerHTML(
-            () => (
-                this.props.renderWeather.map(
-                    cityData => (
-                        <tr key={cityData.city.id}>
-                            <td>{cityData.city.name}</td>
-                        </tr>
-                    )
-                )
-            )
-        );
-    }
-        // (cityData) => {
-        //     console.log(cityData);
-        //     return   <tr key={cityData.city.id}>
-        // <td>{cityData.city.name}</td>
-        // </tr>
-        // };
-        // });
+    static renderWeather(cityData)  {
+            console.log(cityData);
+            return <tr key={cityData.city.id}>
+                <td>{cityData.city.name}</td>
+            </tr>
+
+    };
+
     render () {
-            console.log(this.props.weather);
             return (
                 <table className="table table-hover">
                     <thead>
@@ -42,6 +29,11 @@ class WeatherList extends Component {
                     </tr>
                     </thead>
                     <tbody className="tbodyBind">
+                    {
+                        this.props.weather.map(
+                        (cityData) => WeatherList.renderWeather(cityData)
+                     )
+                    }
                     </tbody>
                 </table>
             )

@@ -1,6 +1,6 @@
 import * as ActionTypes from "../ActionTypes";
 
-export default function weatherReducer(state={}, action) {
+export default function weatherReducer(state=[], action) {
     switch (action.type) {
         case ActionTypes.FETCH_WEATHER_FULFILLED:
             return [
