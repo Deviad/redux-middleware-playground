@@ -1,0 +1,26 @@
+/*global google*/
+/*eslint no-undef: ["error", { "typeof": true }] */
+/*eslint-env browser*/
+import React, {Component} from 'react';
+import PropTypes  from 'prop-types';
+
+class GoogleMap extends Component {
+
+    componentDidMount() {
+        new google.maps.Map(this.refs.map, {
+            zoom: 12,
+            center: {
+                lat: this.props.lat,
+                lng: this.props.lon
+            }
+        });
+    }
+
+    render() {
+        // this.refs.map
+        return (<div ref="map"></div>);
+    }
+
+}
+
+export default GoogleMap;

@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { rootReducer } from './reducers';
 import { rootEpic } from './epics';
 // const history = createBrowserHistory();
-import { combineEpics, createEpicMiddleware } from "redux-observable"
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 const epicMiddleware = createEpicMiddleware((combineEpics(rootEpic)));
 

@@ -1,4 +1,4 @@
-import * as ActionTypes from "../ActionTypes";
+import * as ActionTypes from '../ActionTypes';
 
 export default function weatherReducer(state=[], action) {
     switch (action.type) {

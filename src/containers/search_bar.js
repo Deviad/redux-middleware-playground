@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {fetchWeather} from "../actions";
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
+import {fetchWeather} from '../actions';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import 'rxjs';
 import PropTypes  from 'prop-types';
 class SearchBar extends Component {
@@ -32,7 +32,7 @@ class SearchBar extends Component {
                     <button type="submit" className="btn btn-secondary">Submit</button>
                 </span>
             </form>
-        )
+        );
     }
 }
 function mapStateToProps(state) {
@@ -41,7 +41,7 @@ function mapStateToProps(state) {
     };
 }
 function mapDispatchToProps (dispatch) {
- return  bindActionCreators({fetchWeather: fetchWeather}, dispatch)
+ return  bindActionCreators({fetchWeather: fetchWeather}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
