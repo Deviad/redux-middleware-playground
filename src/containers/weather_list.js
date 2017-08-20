@@ -14,7 +14,6 @@ class WeatherList extends Component {
 
 
     renderWeather()  {
-        debugger;
         console.log(this.props);
         return this.props.weather.map(
             (cityData) => {
